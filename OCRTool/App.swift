@@ -25,10 +25,10 @@ struct App {
             // Create one using the aspect ratios
             guard let ctx = CGContext(
                                 data: nil,
-                                width: 800,
-                                height: 800,
+                                width: 850,
+                                height: 1100,
                                 bitsPerComponent: 8,
-                                bytesPerRow: 4 * 800,
+                                bytesPerRow: 4 * 850,
                                 space: CGColorSpaceCreateDeviceRGB(),
                                 bitmapInfo: CGImageAlphaInfo.premultipliedLast.rawValue | CGBitmapInfo.byteOrder32Big.rawValue) else {
                 fatalError("Failed to create a gfx context")
@@ -37,10 +37,8 @@ struct App {
             guard let img = ctx.makeImage() else {
                 fatalError("Could not makeImage")
             }
-            // Convert to NSImage
-            let nsimg = NSImage(cgImage: img, size: NSSize(width: img.width, height: img.height))
-            // Does this work?
-            let analysis = try! await analyzer.analyze(nsimg, orientation: .up, configuration: .init(.text))
+
+            let analysis = try! await analyzer.analyze(img, orientation: .up, configuration: .init(.text))
             print(analysis.transcript)
         }
     }

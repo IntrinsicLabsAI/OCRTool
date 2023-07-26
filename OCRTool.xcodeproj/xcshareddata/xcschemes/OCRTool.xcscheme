@@ -52,7 +52,7 @@
       </BuildableProductRunnable>
       <CommandLineArguments>
          <CommandLineArgument
-            argument = "/Users/aduffy/Downloads/us_passport.jpg"
+            argument = "/Users/aduffy/Downloads/Leadership\ Resume.pdf"
             isEnabled = "YES">
          </CommandLineArgument>
       </CommandLineArguments>
